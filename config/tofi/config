@@ -1,0 +1,35 @@
+#BEHAVIOUR OPTIONS
+hide-cursor=true
+text-cursor=false
+history=true
+history-file=~/.cache/tofi/history
+hidden-character=*
+
+#STYEL OPTIONS
+font=/usr/share/fonts/TTF/Inconsolata-SemiCondensed.ttf:
+font-size=12
+background-color=#0000007F 
+outline-width=0
+border-width=2
+border-color=#81A1C1
+text-color=#FFFFFF 
+prompt-text=" > "
+prompt-color=#EBCB8B
+prompt-background=#00000000
+placeholder-text=""
+placeholder-color=#00000000
+placeholder-background=#00000000
+input-color=#5E81AC
+input-background=#00000000
+default-result-color=#ffffff
+default-result-background=#00000000
+selection-color=#5E81AC
+selection-background=#00000000
+corner-radius=7
+padding-top=0
+padding-bottom=0
+padding-right=0
+padding-left=0
+width=400
+height=200
+anchor=center
