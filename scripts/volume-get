@@ -1,0 +1,13 @@
+#!/bin/sh
+
+
+volume=$(pulsemixer --get-volume |cut -d" " -f1)
+
+if [[ $volume -ge 75 ]] then
+	echo " $volume" 
+elif [[ $volume -lt 75 ]] && [[ $volume -ne 0 ]] then
+	echo " $volume" 
+else
+	echo muted
+fi
+
