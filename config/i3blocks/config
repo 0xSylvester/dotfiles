@@ -1,0 +1,36 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+
+[time]
+command=date '+ %H:%M'
+interval=30
+
+[date]
+command=date '+ %Y/%m/%d'
+interval=120
+
+[volume]
+command=volume-get
+signal=2
+
+
