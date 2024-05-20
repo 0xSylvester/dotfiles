@@ -34,6 +34,7 @@ set $left j
 set $right semicolon
 set $MOD Mod4
 set $dmenu dmenu_path | wmenu | xargs swaymsg exec --
+set $rofi rofi -show run 
 #============AUTOSTART APPS===========
 exec swayidle -w \
          timeout 300 'swaylock -C ~/.config/swaylock/config' \
@@ -52,10 +53,9 @@ bindsym F9  exec $nsi pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_
 bindsym $MOD+Return exec foot 
 # kill focused window
 bindsym $MOD+Escape kill
-# start tofi (a program launcher)
-#bindsym $MOD+d exec $nsi tofi-run | xargs swaymsg exec --
-bindsym $MOD+d exec $nsi dmenu_run
-# i3lock
+# start the program launcher
+bindsym $MOD+d exec $nsi $rofi
+# swaylock
 bindsym $MOD+x exec swaylock -C ~/.config/swaylock/config
 
 
