@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+base='/sys/class/power_supply/BAT0'
+
+read cap < "$base/capacity"
+read status < "$base/status"
+
+if [[ $status ==  "Charging" ]] ; then 
+	status=""
+else
+	status=""
+fi 
+
+if [[ $cap -eq 100 ]] ; then 
+	echo " $cap% $status"
+elif [[ $cap -gt 75 ]] ; then 
+	echo " $cap% $status"
+elif [[ $cap -gt 50 ]] ; then 
+	echo " $cap% $status"
+elif [[ $cap -gt 25 ]] ; then 
+	echo " $cap%$status"
+else
+	echo "$cap%:$status"
+fi

@@ -23,7 +23,6 @@ set noswapfile
 set shiftwidth=2
 set wildmenu "make window for cmd complition
 set laststatus=2
-set termguicolors
 
 """""""""""""""""""""""""""""""""
 """""########KEY-MAPS#######""""
@@ -81,5 +80,4 @@ Plug 'nordtheme/vim'
 call plug#end()
 
 colorscheme nord 
-hi Normal guibg=NONE
 

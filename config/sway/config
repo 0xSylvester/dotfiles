@@ -25,7 +25,7 @@ client.placeholder      $color00  $color03  #888888   $color15
 client.urgent           $color13  $color13  $color06  $color13
 
 #===============FONT==================
-font pango:Inconsolata Nerd Font Mono 12
+font pango:Inconsolata Mono 15
 #===============VARIABLES=============
 set $nsi --no-startup-id
 set $up l
@@ -53,7 +53,8 @@ bindsym $MOD+Return exec foot
 # kill focused window
 bindsym $MOD+Escape kill
 # start tofi (a program launcher)
-bindsym $MOD+d exec $nsi tofi-run | xargs swaymsg exec --
+#bindsym $MOD+d exec $nsi tofi-run | xargs swaymsg exec --
+bindsym $MOD+d exec $nsi dmenu_run
 # i3lock
 bindsym $MOD+x exec swaylock -C ~/.config/swaylock/config
 
@@ -192,7 +193,7 @@ bar {
 
 		#}
 		colors {
-            separator  #1f222d
+            separator  #ffffff
             background $color00
             statusline $color05
 
@@ -203,13 +204,14 @@ bar {
             urgent_workspace   $color00  $color00  #ee829f
             binding_mode       $color00  #81a1c1   #2e3440
     }
+		separator_symbol "  "
 		id 1
 		position top
 		strip_workspace_numbers yes
 		status_command i3blocks -c ~/.config/i3blocks/config
 }
 #===================OUTPUTS=====================
-output * bg ~/wallpapers/nord-wallpapers/rocket.png fill 
+output * bg ~/wallpapers/nord-wallpapers/kittyboard.png fill 
 #===================INPUTS======================
 input * {
 		xkb_layout "us,ara"
