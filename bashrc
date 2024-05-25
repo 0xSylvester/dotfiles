@@ -3,7 +3,7 @@
 #==========VARIABLEs==========
 #
 #set default apps
-export EDITOR="nvim"
+export EDITOR="vim"
 export BROWSER="firefox"
 export wiki_browser="firefox"
 export TERMINAL="foot"

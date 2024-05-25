@@ -164,6 +164,7 @@ for_window [app_id=""] border pixel 2
 assign [app_id="firefox"] workspace $ws2
 assign [app_id="mpv"] workspace $ws3
 assign [app_id="org.pwmt.zathura"] workspace $ws4
+assign [app_id="libreoffice-startcenter"] workspace $ws4
 
 #======================MODES========================
 # resize window (you can also use the mouse for that)

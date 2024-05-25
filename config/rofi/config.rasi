@@ -1,6 +1,5 @@
 configuration {
-	    font: "Iconsalata 10";
-			    line-margin: 10;
+	    font: "Iconsalata 14";
 					    display-ssh:    "";
 							    display-run:    "";
 									    display-drun:   "";
