@@ -1,0 +1,202 @@
+#===============COLORS===============
+#polar night colors
+set $color00  #1f222d
+set $color01  #2e3440
+set $color02  #434c5e
+set $color03  #4c566a
+set $color04  #d8dee9
+set $color05  #e5e9f0
+set $color06  #eceff4
+set $color07  #8fbcbb
+set $color08  #88c0d0
+set $color09  #81a1c1
+set $color10  #5e81ac
+set $color11  #bf616a
+set $color12  #d08770
+set $color13  #ebcb8b
+set $color14  #a3be8c
+set $color15  #b48ead
+
+# class                 border--  backgr--  text----  indicator
+client.focused          $color09  $color09  $color06  $color09
+client.unfocused        $color00  $color03  #888888   $color15
+client.focused_inactive $color00  $color03  #888888   $color15
+client.placeholder      $color00  $color03  #888888   $color15
+client.urgent           $color13  $color13  $color06  $color13
+
+#===============FONT==================
+font pango:Inconsolata Mono 15
+#===============VARIABLES=============
+set $nsi --no-startup-id
+set $up l
+set $down k
+set $left j
+set $right semicolon
+set $MOD Mod4
+set $rofi rofi -show run 
+set $lock i3lock -c "#000000
+set $term alacritty
+#============AUTOSTART APPS===========
+#=================bindings============
+#increase volume by 5%
+bindsym F12 exec $nsi "pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+2 i3blocks"
+#decrease volume by 5%
+bindsym F11 exec $nsi "pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+2 i3blocks"
+#mute/unmute 
+bindsym F10 exec $nsi "pactl set-sink-mute   @DEFAULT_SINK@ toggle && pkill -RTMIN+2 i3blocks"
+#mute/umute mic
+bindsym F9  exec $nsi pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# start a terminal
+bindsym $MOD+Return exec $term 
+# kill focused window
+bindsym $MOD+Escape kill
+# start the program launcher
+bindsym $MOD+d exec $nsi $rofi
+# i3lock
+bindsym $MOD+x exec $nsi $lock
+
+# change focus
+bindsym $MOD+$left focus left
+bindsym $MOD+$down focus down
+bindsym $MOD+$up focus up
+bindsym $MOD+$right focus right
+
+# move focused window
+bindsym $MOD+Shift+$left move left
+bindsym $MOD+Shift+$down move down
+bindsym $MOD+Shift+$up move up
+bindsym $MOD+Shift+$right move right
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $MOD+s layout stacking
+bindsym $MOD+w layout tabbed
+bindsym $MOD+e layout toggle split
+
+# split in horizontal orientation
+bindsym $MOD+h split h
+# split in vertical orientation
+bindsym $MOD+v split v
+
+#full screen 
+bindsym $MOD+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $MOD+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $MOD+space focus mode_toggle
+
+# move the currently focused window to the scratchpad
+bindsym $MOD+Shift+u move scratchpad
+
+#show/hide scratchpad
+bindsym $MOD+u scratchpad show
+
+# reload the configuration file
+bindsym $MOD+r reload
+
+# enter resize mode
+bindsym Mod1+r mode "resize"
+
+# exit from swat
+bindsym $MOD+Shift+e exec "i3-msg exit" 
+
+#====================Settings====================
+# use Mouse+Mod1 to drag floating windows to their wanted position
+floating_modifier Mod1
+# miniumum/maximum size for floating window
+floating_minimum_size 400 x 200
+floating_maximum_size 700 x 500
+
+# set the default orientation
+default_orientation horizontal
+
+# floating border
+default_floating_border pixel 1
+
+# set workspace layout
+workspace_layout default
+
+# draw borders on windows only if there is more than one window 
+hide_edge_borders smart
+
+#==================WORKSPACES==============
+set $ws1  1:
+set $ws2  2: 
+set $ws3  3:
+set $ws4  4:
+set $ws5  5:
+set $ws6  6:
+set $ws7  7:
+set $ws8  8:
+set $ws9 	9:
+set $ws10 10:
+
+# switch to workspace
+bindsym $MOD+1 workspace $ws1
+bindsym $MOD+2 workspace $ws2
+bindsym $MOD+3 workspace $ws3
+bindsym $MOD+4 workspace $ws4
+bindsym $MOD+5 workspace $ws5
+bindsym $MOD+6 workspace $ws6
+bindsym $MOD+7 workspace $ws7
+bindsym $MOD+8 workspace $ws8
+bindsym $MOD+9 workspace $ws9
+bindsym $MOD+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $MOD+Shift+1 move container to workspace $ws1
+bindsym $MOD+Shift+2 move container to workspace $ws2
+bindsym $MOD+Shift+3 move container to workspace $ws3
+bindsym $MOD+Shift+4 move container to workspace $ws4
+bindsym $MOD+Shift+5 move container to workspace $ws5
+bindsym $MOD+Shift+6 move container to workspace $ws6
+bindsym $MOD+Shift+7 move container to workspace $ws7
+bindsym $MOD+Shift+8 move container to workspace $ws8
+bindsym $MOD+Shift+9 move container to workspace $ws9
+bindsym $MOD+Shift+0 move container to workspace $ws10
+
+for_window [class=".*"] border pixel 2
+assign [class="firefox"] workspace $ws2
+assign [class="mpv"] workspace $ws3
+assign [class="org.pwmt.zathura"] workspace $ws4
+
+#======================MODES========================
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or Mod1+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym Mod1+r mode "default"
+}
+
+#====================BAR========================
+bar {
+		colors {
+            separator  #ffffff
+            background $color00
+            statusline $color05
+
+            #                  border--  backgr--  text----
+            focused_workspace  $color01  $color01  $color05
+            active_workspace   $color00  $color00  $color02
+            inactive_workspace $color00  $color00  $color02
+            urgent_workspace   $color00  $color00  #ee829f
+            binding_mode       $color00  #81a1c1   #2e3440
+    }
+		separator_symbol "  "
+		id 1
+		position top
+		strip_workspace_numbers yes
+		status_command i3blocks -c ~/.config/i3blocks/config
+}
