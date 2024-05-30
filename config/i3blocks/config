@@ -1,6 +1,6 @@
 [battery]
 command=battery
-interval=30
+interval=5
 
 [time]
 command=date '+ %H:%M'
@@ -12,6 +12,12 @@ interval=120
 
 [volume]
 command=volume-get
+interval=once
+signal=10
+
+[brightness]
+command=brightness
+interval=once
 signal=2
 
 

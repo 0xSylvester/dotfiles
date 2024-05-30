@@ -41,13 +41,19 @@ exec swayidle -w \
          timeout 500 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' 
 #=================bindings============
 #increase volume by 5%
-bindsym F12 exec $nsi "pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+2 i3blocks"
+bindsym F12 exec $nsi "pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks"
 #decrease volume by 5%
-bindsym F11 exec $nsi "pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+2 i3blocks"
+bindsym F11 exec $nsi "pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks"
 #mute/unmute 
-bindsym F10 exec $nsi "pactl set-sink-mute   @DEFAULT_SINK@ toggle && pkill -RTMIN+2 i3blocks"
+bindsym F10 exec $nsi "pactl set-sink-mute   @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks"
 #mute/umute mic
 bindsym F9  exec $nsi pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+#brightness increase
+bindsym F1 exec $nsi "brightnessctl set +5% && pkill -RTMIN+2 i3blocks" 
+#brightness decrease
+bindsym F2 exec $nsi "brightnessctl set 5%- && pkill -RTMIN+2 i3blocks" 
+
 
 # start a terminal
 bindsym $MOD+Return exec foot 
