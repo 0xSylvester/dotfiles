@@ -1,0 +1,9 @@
+#!/bin/bash
+
+base="/sys/class/backlight/intel_backlight"
+now="$(cat ${base}/brightness)"
+max="$(cat ${base}/max_brightness)"
+
+per=$(echo "scale=2;(${now}/${max})* 100" |bc| cut -d"." -f1)
+
+echo "  ${per}%"
