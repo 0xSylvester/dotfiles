@@ -1,4 +1,4 @@
-(defvar efs/default-font-size 180)
+(defvar efs/default-font-size 300)
 (defvar efs/default-variable-font-size 180)
 
 
