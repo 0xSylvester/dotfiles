@@ -33,8 +33,7 @@ set $down k
 set $left j
 set $right semicolon
 set $MOD Mod4
-set $dmenu dmenu_path | wmenu | xargs swaymsg exec --
-set $rofi rofi -show run 
+set $launcher tofi-run |xargs swaymsg exec --
 #============AUTOSTART APPS===========
 exec swayidle -w \
          timeout 300 'swaylock -C ~/.config/swaylock/config' \
@@ -60,7 +59,7 @@ bindsym $MOD+Return exec foot
 # kill focused window
 bindsym $MOD+Escape kill
 # start the program launcher
-bindsym $MOD+d exec $nsi $rofi
+bindsym $MOD+d exec $nsi $launcher
 # swaylock
 bindsym $MOD+x exec swaylock -C ~/.config/swaylock/config
 
