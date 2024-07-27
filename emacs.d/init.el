@@ -1,4 +1,4 @@
-(defvar efs/default-font-size 300)
+(defvar efs/default-font-size 180)
 (defvar efs/default-variable-font-size 180)
 
 
@@ -162,4 +162,28 @@
     "b" '(:ignore t :which-key "buffers")
     "bs" '(counsel-switch-buffer :which-key "switch-buffer")
     "bk" '(kill-buffer  :which-key "kill buffer")))
+
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook)
+  (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
+  (setq dashboard-banner-logo-title "I use Emacs, which might be thought of as a thermonuclear word processor!!!")
+  (setq dashboard-startup-banner 'logo)
+  (setq dashboard-set-navigator t)
+  (setq dashboard-set-heading-icons t)
+  (setq dashboard-items '((recents  . 15)
+			    (bookmarks . 5)))
+  (setq dashboard-set-file-icons t))
+
+
+ (use-package ivy-posframe
+   :init
+   (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
+   (setq ivy-posframe-border-width 2)
+   (setq ivy-posframe-parameters
+	'((left-fringe . 16)
+	  (right-fringe . 16)))
+   :config
+   (ivy-posframe-mode 1))
+
 
