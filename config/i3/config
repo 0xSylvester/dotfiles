@@ -52,7 +52,7 @@ bindsym $MOD+Return exec $term
 # kill focused window
 bindsym $MOD+Escape kill
 # start the program launcher
-bindsym $MOD+d exec $nsi $rofi
+bindsym $MOD+d exec $nsi dmenu_run
 # i3lock
 bindsym $MOD+x exec $nsi $lock
 
