@@ -59,9 +59,6 @@ map <C-l> <C-w>l
 """""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"this plugs for snippets
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
 
 "status bar 
 Plug 'vim-airline/vim-airline'
@@ -69,11 +66,6 @@ Plug 'vim-airline/vim-airline'
 "make color for any hex text 
 Plug 'ap/vim-css-color'
 
-"buffer 
-Plug 'jeetsukumaran/vim-buffergator'
-
-"gruvbox
-Plug 'gruvbox-community/gruvbox'
 
 "nord
 Plug 'nordtheme/vim'
