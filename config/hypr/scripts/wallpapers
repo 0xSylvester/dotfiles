@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+paths=$(find ~/wallpapers/* -type d -exec basename {} \;)
+
+echo $paths 
+
+

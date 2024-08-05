@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function powermenu {
+	options="shutdown reboot lock exit"
+	selected=$(printf "%s\n" $options | wofi --show dmenu -c menu)
+	if [[ $selected =  "shutdown" ]]; then
+		poweroff 
+	elif [[ $selected = "reboot" ]]; then
+		reboot
+	elif [[ $selected = "lock" ]]; then
+		loginctl lock-session		
+	elif [[ $selected = "exit" ]]; then
+     hyprctl dispatch exit
+	fi
+}
+
+
+powermenu
