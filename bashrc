@@ -4,7 +4,7 @@
 #
 #set default apps
 
-export EDITOR="vim"
+export EDITOR="nvim"
 export BROWSER="firefox"
 export wiki_browser="firefox"
 export TERMINAL="foot"
