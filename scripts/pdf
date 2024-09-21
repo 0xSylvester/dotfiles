@@ -1,0 +1,10 @@
+#!/bin/bash
+
+base ="~/documents/pdf"
+selected=$(ls $base | cut -d"." -f1 | wofi --dmenu)
+
+if [[ -z $selected ]]; then
+    exit
+fi
+
+zathura "$base/${selected}.pdf"
