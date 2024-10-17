@@ -1,6 +1,6 @@
 #!/bin/bash
 
-base ="~/documents/pdf"
+base=~/documents/pdf
 selected=$(ls $base | cut -d"." -f1 | wofi --dmenu)
 
 if [[ -z $selected ]]; then
