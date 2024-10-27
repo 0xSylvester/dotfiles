@@ -1,5 +1,5 @@
 [ -z "$PS1" ] && return
-#[ -f "/home/mustafa/.cache/wal/sequences" ] && cat $HOME/.cache/wal/sequences 
+#[ -f "$HOME/.cache/wallust/sequences" ] && cat $HOME/.cache/wallust/sequences 
 #==========VARIABLEs==========
 #
 #set default apps
@@ -85,4 +85,3 @@ _ps1() {
                PS1="${_p[lb]}${_p[t]}${_p[rb]}${_p[ar]} ${_p[w]} ${_p[d]} "
         fi
 }
-alias tgpt='tgpt -i --provider phind'
