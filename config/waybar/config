@@ -6,6 +6,7 @@
 		"modules-center":["group/group-power","tray",],
 		"modules-left":["hyprland/workspaces"],
 		"spacing":5,
+        "reload_style_on_change": true,
 
 		"hyprland/workspaces": {
 			"format": "{icon}",
@@ -20,11 +21,11 @@
 				
 		"battery": {
 			"bat":"BAT0",
-    	"interval": 60,
-    	"format": "{capacity}% {icon}",
-    	"format-charging": "{capacity}% {icon} ",
-    	"format-icons": ["", "", "", "", ""],
-    	"max-length": 25,
+    	    "interval": 60,
+    	    "format": "{capacity}% {icon}",
+    	    "format-charging": "{capacity}% {icon} ",
+    	    "format-icons": ["", "", "", "", ""],
+    	    "max-length": 25,
 
 			"tooltip":true,
 			"tooltip-format":"{timeTo}",
