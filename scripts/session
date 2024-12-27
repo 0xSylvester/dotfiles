@@ -9,7 +9,7 @@ go() {
         tmux new -s $name -c $base \
             \; rename-window -t $name:0 vi \
             \; new-window -n run \
-            \; new-window -n $namedoc \
+            \; new-window -n doc \
             \; new-window -n gpt "tgpt -i --provider duckduck$name" \
             \; new-window -n browser \
             \; next-window -t $name:0
@@ -40,9 +40,9 @@ cpp() {
     else
         tmux new -s $name -c $base \
             \; rename-window -t $name:0 vi \
-            \; new-window -t run \
-            \; new-window -t man \
-            \; new-window -t gpt "tgpt -i --provider duckduckgo" \
+            \; new-window -n run \
+            \; new-window -n man \
+            \; new-window -n gpt "tgpt -i --provider duckduckgo" \
             \; next-window -t $name:0
     fi
 }
