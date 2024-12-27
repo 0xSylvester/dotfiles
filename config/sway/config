@@ -49,10 +49,10 @@ bindsym $MOD+Return exec foot
 # kill focused window
 bindsym $MOD+Escape kill
 # start the program launcher
-bindsym $MOD+d exec $nsi wofi --show run
+bindsym $MOD+d exec $nsi $launcher 
 bindsym $MOD+Shift+d exec $nsi wofi --show drun
 # swaylock
-bindsym $MOD+x exec swaylock -C ~/.config/swaylock/config
+bindsym $MOD+x exec $scripts/lock
 
 
 # change focus
@@ -89,8 +89,11 @@ bindsym $MOD+space focus mode_toggle
 # move the currently focused window to the scratchpad
 bindsym $MOD+Shift+u move scratchpad
 
-#show/hide scratchpad
+# show/hide scratchpad
 bindsym $MOD+u scratchpad show
+
+# launch theme script
+bindsym $MOD+t  exec $nsi $scripts/theme
 
 # reload the configuration file
 bindsym $MOD+r reload
