@@ -1,0 +1,87 @@
+@import "theme.css";
+
+* {
+	border: none;
+	border-radius: 4px;
+	font-family: "Inconsolata Semi Expanded Bold" ;
+	font-size: 16px;
+}
+
+window#waybar {
+	background:rgba(0,0,0,0.5);
+	color:@foreground;
+}
+
+
+#workspaces button {
+	background: @color2;
+	color: @foreground;
+	padding: 0 10px;
+	margin: 0 2px;
+	border-radius: 20%;
+}
+
+#workspaces button.active {
+	background: @color4;
+	color: @foreground;
+}
+
+#workspaces button.urgent {
+	background:@color11;
+}
+
+#group-power {
+	background: @color4;
+	color: @foreground;
+	padding: 0 4px;
+	margin: 0 2px;
+}
+
+#tray {
+	background: @color1;
+	padding:0 10px;
+}
+
+#tray menu {
+	background: @color4;
+	color: @foreground;
+}
+
+#network, #pulseaudio{
+	background: @color4;
+	padding: 0 5px;
+	margin: 0 1px;
+	border-top-right-radius:0px;
+	border-bottom-right-radius:0px;
+}
+
+#battery, #backlight{
+	background: @color4;
+	padding: 0 5px;
+	margin: 0 1px;
+	border-top-left-radius:0px;
+	border-bottom-left-radius:0px;
+}
+
+#clock {
+	background: @color0;
+	margin: 0 2px;
+	padding: 0 5px;
+}
+
+#network.disconnected {
+	background:@color11;
+}
+
+#battery.charging {
+	background:#000000;
+}
+
+#battery.discharging {
+	background:#ff0000;
+}
+
+#pulseaudio.muted {
+	background: @color11;
+}
+

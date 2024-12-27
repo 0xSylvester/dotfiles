@@ -1,17 +1,28 @@
 backend = "full"
 color_space = "lch"
 palette = "dark"
+alpha = 0
 
 [templates]
 hypr.template = 'hypr'
 hypr.target = '~/.config/hypr/theme.conf'
 
-waybar.template = 'waybar'
-waybar.target = '~/.config/waybar/theme.css'
+waybar-sway.template = 'waybar-sway'
+waybar-sway.target = '~/.config/waybar/sway/theme.css'
+
+waybar-hypr.template = 'waybar-hypr'
+waybar-hypr.target = '~/.config/waybar/hyprland/theme.css'
 
 wofi.template = 'wofi'
 wofi.target = '~/.config/wofi/theme.css'
 
 swaync.template = 'swaync'
 swaync.target = '~/.config/swaync/themes/wallust/colors-wallust.css'
+
+sway.template = 'sway'
+sway.target = '~/.config/sway/theme'
+
+swaylock.template = 'swaylock'
+swaylock.target = '~/.config/swaylock/config'
+
 
