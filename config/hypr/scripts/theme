@@ -1,0 +1,21 @@
+#!/bin/sh
+
+empty() {
+    if [[ -z $1 ]] then
+        exit
+    fi
+
+}
+
+base=~/wallpapers
+theme=$(ls $base | wofi --dmenu)
+empty $theme
+
+img=$(ls $base/$theme | wofi --dmenu)
+empty $img
+
+wallust run $base/$theme/$img
+swww img $base/$theme/$img
+
+pkill waybar 
+hyprctl dispatch exec "waybar -c ~/.config/waybar/hyprland/config -s ~/.config/waybar/hyprland/style.css"
