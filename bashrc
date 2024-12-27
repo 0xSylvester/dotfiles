@@ -1,5 +1,5 @@
 [ -z "$PS1" ] && return
-#[ -f "$HOME/.cache/wallust/sequences" ] && cat $HOME/.cache/wallust/sequences 
+[ -f "$HOME/.cache/wallust/sequences" ] && cat $HOME/.cache/wallust/sequences 
 #==========VARIABLEs==========
 #
 #set default apps
