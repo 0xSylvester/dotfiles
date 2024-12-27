@@ -1,0 +1,22 @@
+#!/bin/sh
+
+empty() {
+    if [[ -z $1 ]] then
+        exit
+    fi
+
+}
+
+base=~/wallpapers
+theme=$(ls $base | wofi --dmenu)
+empty $theme
+
+img=$(ls $base/$theme | wofi --dmenu)
+empty $img
+
+wallust theme $theme 
+swww img $base/$theme/$img
+
+pkill waybar
+waybar -c ~/.config/waybar/sway/config -s ~/.config/waybar/sway/style.css
+swaymsg reload

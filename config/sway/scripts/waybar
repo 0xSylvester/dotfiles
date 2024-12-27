@@ -1,0 +1,3 @@
+#!/bin/sh
+
+waybar -c ~/.config/waybar/sway/config -s ~/.config/waybar/sway/style.css

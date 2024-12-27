@@ -1,0 +1,5 @@
+#!/bin/sh
+
+wallpaper=$(swww query | cut -d':' -f5)
+echo $wallpaper
+
