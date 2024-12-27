@@ -1,0 +1,25 @@
+image=~/wallpapers/nord-wallpapers/image-go-nord/ign-0001.png
+font=iconsalata
+font-size=20
+
+bs-hl-color={{color9}}
+
+indicator-radius=70
+indicator-thickness=12
+
+inside-color=#0000007F
+inside-clear-color={{color6}}7F
+inside-ver-color={{color3}} 7F
+inside-wrong-color={{color2}}7F
+
+ring-color={{color4}}
+ring-clear-color={{color6}}
+ring-ver-color={{color3}}
+ring-wrong-color={{color2}}
+
+key-hl-color={{color12}}
+
+layout-bg-color=#ffffff00
+layout-text-color=#5e81ac
+
+text-caps-lock-color=ebcb8b
