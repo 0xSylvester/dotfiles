@@ -184,39 +184,15 @@ mode "resize" {
         bindsym Mod1+r mode "default"
 }
 
-#====================BAR========================
-bar {
-		#colors {
-		#	background $polar_night_3
-		#	statusline $snow_storm_2
-		#	focused_workspace $polar_night_2  $polar_night_2 $snow_storm_2
-		#	inactive_workspace $polar_night_4  $polar_night_4 $snow_storm_2
-
-		#}
-		colors {
-            separator  #ffffff
-            background $color00
-            statusline $color05
-
-            #                  border--  backgr--  text----
-            focused_workspace  $color01  $color01  $color05
-            active_workspace   $color00  $color00  $color02
-            inactive_workspace $color00  $color00  $color02
-            urgent_workspace   $color00  $color00  #ee829f
-            binding_mode       $color00  #81a1c1   #2e3440
-    }
-		separator_symbol "  "
-		id 1
-		position top
-		strip_workspace_numbers yes
-		status_command i3blocks -c ~/.config/i3blocks/config
-}
 #===================OUTPUTS=====================
-output * bg ~/wallpapers/nord-wallpapers/kittyboard.png fill 
+#output * bg ~/wallpapers/nord-wallpapers/kittyboard.png fill 
 #===================INPUTS======================
 input * {
 		xkb_layout "us,ara"
 		xkb_options "grp:alt_shift_toggle,caps:swapescape"
 		repeat_delay 250
 }
+#==================GAPS=========================
+gaps outer 3
+gaps inner 5
 
