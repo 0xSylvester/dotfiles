@@ -22,6 +22,7 @@ export dotfiles="$repos/dotfiles"
 Co=( '\033[3'{0..7}m '\033[1;3'{0..7}m '\033[0m' )
 PROMPT_COMMAND="_ps1"
 
+export GRIM_DEFAULT_DIR="$HOME/Pictures/screen"
 #==========BASH-OPTIONS==========
 #testing vi mode 
 set -o vi
