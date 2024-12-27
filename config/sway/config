@@ -1,44 +1,32 @@
 #===============COLORS===============
-#polar night colors
-set $color00  #1f222d
-set $color01  #2e3440
-set $color02  #434c5e
-set $color03  #4c566a
-set $color04  #d8dee9
-set $color05  #e5e9f0
-set $color06  #eceff4
-set $color07  #8fbcbb
-set $color08  #88c0d0
-set $color09  #81a1c1
-set $color10  #5e81ac
-set $color11  #bf616a
-set $color12  #d08770
-set $color13  #ebcb8b
-set $color14  #a3be8c
-set $color15  #b48ead
+include ./theme
 
 # class                 border--  backgr--  text----  indicator
-client.focused          $color09  $color09  $color06  $color09
-client.unfocused        $color00  $color03  #888888   $color15
+client.focused          $color00  $color04  $color06  $color09
+client.unfocused        $color00  $color09  #888888   $color15
 client.focused_inactive $color00  $color03  #888888   $color15
 client.placeholder      $color00  $color03  #888888   $color15
-client.urgent           $color13  $color13  $color06  $color13
+client.urgent           $color00  $color13  $color06  $color13
 
 #===============FONT==================
-font pango:Inconsolata Mono 15
+font pango:Inconsolata Mono 11
 #===============VARIABLES=============
 set $nsi --no-startup-id
+set $scripts ~/.config/sway/scripts/
 set $up l
 set $down k
 set $left j
 set $right semicolon
 set $MOD Mod4
-set $launcher tofi-run |xargs swaymsg exec --
+set $launcher wofi --show run
+
 #============AUTOSTART APPS===========
+exec $scripts/waybar 
+exec swww-daemon 
 exec dunst &
 exec telegram-desktop
 exec swayidle -w \
-         timeout 300 'swaylock -C ~/.config/swaylock/config' \
+         timeout 300 '$scripts/lock' \
          timeout 500 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' 
 #=================bindings============
 #increase volume by 5%
