@@ -164,9 +164,9 @@ bindsym $MOD+Shift+0 move container to workspace $ws10
 
 for_window [app_id=""] border pixel 2
 assign [app_id="firefox"] workspace $ws2
-assign [app_id="mpv"] workspace $ws3
+assign [app_id="mpv"] workspace $ws4
+assign [app_id="org.pwmt.zathura"] workspace $ws3
 assign [app_id="org.telegram.desktop"] workspace $ws5
-assign [app_id="org.pwmt.zathura"] workspace $ws6
 assign [app_id="libreoffice-startcenter"] workspace $ws6
 
 #======================MODES========================
