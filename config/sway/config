@@ -95,13 +95,16 @@ bindsym $MOD+u scratchpad show
 # launch theme script
 bindsym $MOD+t  exec $nsi $scripts/theme
 
+# wifi menu
+bindsym F8 exec $nsi wifi
+
 # reload the configuration file
 bindsym $MOD+r reload
 
 # enter resize mode
 bindsym Mod1+r mode "resize"
 
-# exit from swat
+# exit from sway
 bindsym $MOD+Shift+e exec "swaymsg exit" 
 
 #====================Settings====================
