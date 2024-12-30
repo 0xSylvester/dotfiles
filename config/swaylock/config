@@ -2,24 +2,24 @@ image=~/wallpapers/nord-wallpapers/image-go-nord/ign-0001.png
 font=iconsalata
 font-size=20
 
-bs-hl-color=#d8dee9
+bs-hl-color=#A89984
 
 indicator-radius=70
 indicator-thickness=12
 
-inside-color=0000007F
-inside-clear-color=b48ead7F
-inside-ver-color=a3be8c7F
-inside-wrong-color=bf616a7F
+inside-color=#0000007F
+inside-clear-color=#B162867F
+inside-ver-color=#258588 7F
+inside-wrong-color=#CC241D7F
 
-ring-color=4c566a
-ring-clear-color=b48ead
-ring-ver-color=a3be8c
-ring-wrong-color=#bf616a
+ring-color=#D79921
+ring-clear-color=#B16286
+ring-ver-color=#258588
+ring-wrong-color=#CC241D
 
-key-hl-color=2e3440
+key-hl-color=#98971A
 
-layout-bg-color=ffffff00
-layout-text-color=5e81ac
+layout-bg-color=#EBDBB2
+layout-text-color=#5e81ac
 
 text-caps-lock-color=ebcb8b

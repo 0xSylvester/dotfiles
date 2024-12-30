@@ -2,8 +2,8 @@
 include ./theme
 
 # class                 border--  backgr--  text----  indicator
-client.focused          $color00  $color04  $color06  $color09
-client.unfocused        $color00  $color09  #888888   $color15
+client.focused          $color00  $color03  $color06  $color09
+client.unfocused        $color00  $color07  #888888   $color15
 client.focused_inactive $color00  $color03  #888888   $color15
 client.placeholder      $color00  $color03  #888888   $color15
 client.urgent           $color00  $color13  $color06  $color13

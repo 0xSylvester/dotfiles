@@ -15,7 +15,7 @@ window#waybar {
 
 
 #workspaces button {
-	background: @color1;
+	background: @color7;
 	color: @color;
 	padding: 0 10px;
 	margin: 0 2px;
@@ -23,7 +23,7 @@ window#waybar {
 }
 
 #workspaces button.focused{
-	background: @color4;
+	background: @color3;
 	color: @text;
 }
 
@@ -33,24 +33,24 @@ window#waybar {
 
 
 #group-power {
-	background: @color4;
+	background: @color3;
 	color: @color;
 	padding: 0 4px;
 	margin: 0 2px;
 }
 
 #tray {
-	background: @color1;
+	background: @color3;
 	padding:0 10px;
 }
 
 #tray menu {
-	background: @color4;
+	background: @color7;
 	color: @color;
 }
 
 #network, #pulseaudio{
-	background: @color4;
+	background: @color3;
 	padding: 0 5px;
 	margin: 0 1px;
 	border-top-right-radius:0px;
@@ -58,7 +58,7 @@ window#waybar {
 }
 
 #battery, #backlight{
-	background: @color4;
+	background: @color3;
 	padding: 0 5px;
 	margin: 0 1px;
 	border-top-left-radius:0px;
@@ -66,24 +66,24 @@ window#waybar {
 }
 
 #clock {
-	background: @background;
+	background: @color3;
 	margin: 0 2px;
 	padding: 0 5px;
 }
 
 #network.disconnected {
-	background:@color11;
+	background:@color1;
 }
 
 #battery.charging {
-	background:#000000;
+	background:@color7;
 }
 
 #battery.discharging {
-	background:#ff0000;
+	background:@color1;
 }
 
 #pulseaudio.muted {
-	background: @color11;
+	background: @color1;
 }
 

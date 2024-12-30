@@ -1,7 +1,7 @@
 @import '/home/sylvester/.config/wofi/theme.css';
 window {
     margin: 2px;
-    border: 3px solid @color4;
+    border: 3px solid @color3;
     border-radius: 8px;
 		opacity:0.9;
 }
@@ -53,5 +53,5 @@ window {
     margin: 0px 0px;
     border: none;
     border-radius: 8px;
-    background-color: @color4;
+    background-color: @color3;
 }
