@@ -1,0 +1,44 @@
+#!/bin/sh
+
+
+get_volume() {
+    if [[ $volume -ge 75 ]] then
+    	echo " $volume" 
+    elif [[ $volume -lt 75 ]] && [[ $volume -ne 0 ]] then
+    	echo " $volume" 
+    else
+    	echo muted
+    fi
+}
+
+
+set_volume() {
+    case "$1" in
+        [0-9][0-9]) pactl set-sink-volume @DEFAULT_SINK@ "${1}%";;
+        100 ) pactl set-sink-volume @DEFAULT_SINK@ "100%";;
+        mute) pactl set-sink-mute @DEFAULT_SINK@ toggle;;
+    esac
+}
+
+inc_volume() {
+    result=$( echo "$1 + $volume" | bc )
+    if [[ $resulte -le 100 ]] then
+        pactl set-sink-volume @DEFAULT_SINK@ "+$1%"
+    fi
+}
+
+dec_volume() {
+    result=$( echo "$volume - $1" | bc )
+    if [[ $resulte -ge 0 ]] then
+        pactl set-sink-volume @DEFAULT_SINK@ "-$1%"
+    fi
+}
+volume=$(pulsemixer --get-volume |cut -d" " -f1)
+
+case "$1" in
+    get) get_volume ;;
+    set) set_volume $2 $3 ;;
+    inc) inc_volume $2 ;;
+    dec) dec_volume $2 ;;
+esac
+
