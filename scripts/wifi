@@ -1,23 +1,20 @@
 #!/bin/sh
 
 empty() {
-    if [[ -z $1 ]] then
-        exit
-    fi
+    test -z "$1" && return 1
 }
 
 get_ssid() {
     nmcli device wifi rescan
     ssid=$(nmcli -g ssid device wifi list | wofi --show dmenu)
-    empty $ssid
 }
 
 connect() {
-    nmcli device wifi connect "$1" 2> /dev/null
-    notify-send Wifi "Connected to $1 successfully"
+    nmcli device wifi connect "$1" 2>/dev/null
 }
 
 get_ssid
-connect "$ssid"
-
-
+empty "$ssid" && exit
+if connect "$ssid"; then
+    notify-send Wifi "Connected to $ssid successfully"
+fi

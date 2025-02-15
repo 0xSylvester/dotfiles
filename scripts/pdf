@@ -7,4 +7,4 @@ if [[ -z $selected ]]; then
     exit
 fi
 
-zathura "$base/${selected}.pdf"
+exec zathura "$base/${selected}.pdf"
