@@ -3,17 +3,19 @@
 go() {
     name=go
     base=$HOME/repos/lab/go
+
     if command tmux has-session -t $name 2>/dev/null; then
         tmux a -t $name
-    else
-        tmux new -s $name -c $base \
-            \; rename-window -t $name:0 vi \
-            \; new-window -n run \
-            \; new-window -n doc \
-            \; new-window -n gpt "tgpt -i --provider duckduck$name" \
-            \; new-window -n browser \
-            \; next-window -t $name:0
+        return
     fi
+
+    tmux new -s $name -c $base \
+        \; rename-window -t $name:0 vi \
+        \; new-window -n run \
+        \; new-window -n doc \
+        \; new-window -n gpt "tgpt -i --provider duckduck$name" \
+        \; new-window -n browser \
+        \; next-window -t $name:0
 }
 
 main() {
@@ -46,6 +48,7 @@ cpp() {
             \; next-window -t $name:0
     fi
 }
+
 c() {
     name="c"
     base=$HOME/repos/lab/c
@@ -60,6 +63,10 @@ c() {
             \; next-window -t $name:0
     fi
 }
+
+#if ! "$1" 2>/dev/null; then
+#    echo "-_-" 1>&2
+#fi
 
 case "$1" in
 go) go ;;
