@@ -3,7 +3,7 @@
 		"possition": "top",
 		"height": 30,
 		"modules-right":["network","battery", "clock", "pulseaudio","backlight"],
-		"modules-center":["group/group-power","tray",],
+		"modules-center":["group/group-power","tray","sway/mode",],
 		"modules-left":["sway/workspaces"],
 		"spacing":5,
         "reload_style_on_change": true,
@@ -18,7 +18,13 @@
 				"5": "",
 			},
 		},
-				
+        
+        "sway/mode": {
+            "format": "{}",
+            "max-length": 50,
+
+        },
+
 		"battery": {
 			"bat":"BAT0",
     	    "interval": 60,

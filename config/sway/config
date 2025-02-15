@@ -4,7 +4,7 @@ include ./theme
 # class                 border--  backgr--  text----  indicator
 client.focused          $color00  $color03  $color06  $color09
 client.unfocused        $color00  $color07  #888888   $color15
-client.focused_inactive $color00  $color03  #888888   $color15
+client.focused_inactive $color00  $color07  #888888   $color15
 client.placeholder      $color00  $color03  #888888   $color15
 client.urgent           $color00  $color13  $color06  $color13
 
@@ -22,6 +22,7 @@ set $launcher wofi --show run
 
 #============AUTOSTART APPS===========
 exec $scripts/waybar 
+exec wlsunset -l 32.377533 -L 15.092017 
 exec swww-daemon 
 exec dunst &
 exec telegram-desktop
@@ -54,6 +55,8 @@ bindsym $MOD+Shift+d exec $nsi wofi --show drun
 # swaylock
 bindsym $MOD+x exec $scripts/lock
 
+# grim
+bindsym $MOD+g exec grim
 
 # change focus
 bindsym $MOD+$left focus left
@@ -104,6 +107,9 @@ bindsym $MOD+r reload
 # enter resize mode
 bindsym Mod1+r mode "resize"
 
+# enter opacity mode
+bindsym Mod1+a mode "opacity
+
 # exit from sway
 bindsym $MOD+Shift+e exec "swaymsg exit" 
 
@@ -111,8 +117,8 @@ bindsym $MOD+Shift+e exec "swaymsg exit"
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
 # miniumum/maximum size for floating window
-floating_minimum_size 400 x 200
-floating_maximum_size 700 x 500
+#floating_minimum_size 400 x 200
+#floating_maximum_size 700 x 500
 
 # set the default orientation
 default_orientation horizontal
@@ -163,6 +169,7 @@ bindsym $MOD+Shift+9 move container to workspace $ws9
 bindsym $MOD+Shift+0 move container to workspace $ws10
 
 for_window [app_id=""] border pixel 2
+for_window [app_id="foot"] opacity set 0.9
 assign [app_id="firefox"] workspace $ws2
 assign [app_id="mpv"] workspace $ws4
 assign [app_id="org.pwmt.zathura"] workspace $ws3
@@ -172,21 +179,44 @@ assign [app_id="libreoffice-startcenter"] workspace $ws6
 #======================MODES========================
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize grow height 10 px or 10 ppt
-        bindsym $up         resize shrink height 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
+    bindsym w mode "width"
+    bindsym h mode "height"
+    bindsym c move position center
 
-        # back to normal: Enter or Escape or Mod1+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym Mod1+r mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
+mode "opacity" {
+
+    bindsym f opacity set 1 
+    bindsym o opacity set 0.9
+    bindsym i opacity plus 0.05
+    bindsym d opacity minus 0.05
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "width" {
+    bindsym i resize grow width 10 px or 10 ppt
+    bindsym d resize shrink width 10 px or 10 ppt
+    bindsym c move position center
+    
+    bindsym h mode "height"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "height" {
+    bindsym i resize grow height 10 px or 10 ppt
+    bindsym d resize shrink height 10 px or 10 ppt
+    bindsym c move position center
+
+    bindsym w mode "width"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 #===================OUTPUTS=====================
 #output * bg ~/wallpapers/nord-wallpapers/kittyboard.png fill 
 #===================INPUTS======================
