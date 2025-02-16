@@ -22,17 +22,15 @@ set_volume() {
 
 inc_volume() {
     result=$( echo "$1 + $volume" | bc )
-    if [[ $resulte -le 100 ]] then
+    if [[ $result -le 100 ]] then
         pactl set-sink-volume @DEFAULT_SINK@ "+$1%"
     fi
 }
 
 dec_volume() {
-    result=$( echo "$volume - $1" | bc )
-    if [[ $resulte -ge 0 ]] then
         pactl set-sink-volume @DEFAULT_SINK@ "-$1%"
-    fi
 }
+
 volume=$(pulsemixer --get-volume |cut -d" " -f1)
 
 case "$1" in
