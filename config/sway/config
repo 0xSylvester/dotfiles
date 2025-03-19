@@ -31,18 +31,18 @@ exec swayidle -w \
          timeout 500 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' 
 #=================bindings============
 #increase volume by 5%
-bindsym F12 exec $nsi "volume inc 5 && pkill -RTMIN+10 i3blocks"
+bindsym F7 exec $nsi "volume inc 5"
 #decrease volume by 5%
-bindsym F11 exec $nsi "volume dec 5 && pkill -RTMIN+10 i3blocks"
+bindsym F6 exec $nsi "volume dec 5 "
 #mute/unmute 
-bindsym F10 exec $nsi "volume set mute && pkill -RTMIN+10 i3blocks"
+bindsym F5 exec $nsi "volume set mute"
 #mute/umute mic
-bindsym F9  exec $nsi pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym F8  exec $nsi pactl set-source-mute @DEFAULT_SOURCE@ toggle 
 
 #brightness increase
-bindsym F1 exec $nsi "brightnessctl set +5% && pkill -RTMIN+2 i3blocks" 
+bindsym F2 exec $nsi "brightnessctl set +5% && pkill -RTMIN+2 i3blocks" 
 #brightness decrease
-bindsym F2 exec $nsi "brightnessctl set 5%- && pkill -RTMIN+2 i3blocks" 
+bindsym F1 exec $nsi "brightnessctl set 5%- && pkill -RTMIN+2 i3blocks" 
 
 
 # start a terminal
@@ -99,7 +99,7 @@ bindsym $MOD+u scratchpad show
 bindsym $MOD+t  exec $nsi $scripts/theme
 
 # wifi menu
-bindsym F8 exec $nsi wifi
+bindsym F9 exec $nsi wifi
 
 # reload the configuration file
 bindsym $MOD+r reload
@@ -108,7 +108,10 @@ bindsym $MOD+r reload
 bindsym Mod1+r mode "resize"
 
 # enter opacity mode
-bindsym Mod1+a mode "opacity
+bindsym Mod1+a mode "opacity"
+
+# start draw script
+bindsym Mod1+p mode "draw"
 
 # exit from sway
 bindsym $MOD+Shift+e exec "swaymsg exit" 
@@ -170,11 +173,15 @@ bindsym $MOD+Shift+0 move container to workspace $ws10
 
 for_window [app_id=""] border pixel 2
 for_window [app_id="foot"] opacity set 0.9
+for_window [app_id="com.github.maoschanz.drawing"] workspace $ws6
+for_window [app_id="com.github.maoschanz.drawing"] fullscreen 
 assign [app_id="firefox"] workspace $ws2
 assign [app_id="mpv"] workspace $ws4
 assign [app_id="org.pwmt.zathura"] workspace $ws3
 assign [app_id="org.telegram.desktop"] workspace $ws5
+assign [class="discord"] $ws5
 assign [app_id="libreoffice-startcenter"] workspace $ws6
+assign [app_id="com.github.maoschanz.drawing"] workspace $ws6
 
 #======================MODES========================
 # resize window (you can also use the mouse for that)
@@ -214,6 +221,14 @@ mode "height" {
     bindsym c move position center
 
     bindsym w mode "width"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "draw" {
+    bindsym n exec draw new 
+    bindsym s exec draw screenshot
+
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
