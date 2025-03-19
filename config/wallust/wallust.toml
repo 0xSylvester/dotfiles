@@ -16,13 +16,13 @@ waybar-hypr.target = '~/.config/waybar/hyprland/theme.css'
 wofi.template = 'wofi'
 wofi.target = '~/.config/wofi/theme.css'
 
-swaync.template = 'swaync'
-swaync.target = '~/.config/swaync/themes/wallust/colors-wallust.css'
-
 sway.template = 'sway'
 sway.target = '~/.config/sway/theme'
 
 swaylock.template = 'swaylock'
 swaylock.target = '~/.config/swaylock/config'
+
+Xresource.template = 'Xresources'
+Xresource.target = '~/.Xresources'
 
 

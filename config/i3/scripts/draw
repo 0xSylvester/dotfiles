@@ -1,0 +1,11 @@
+#!/bin/sh
+
+mode=$1
+case "$mode" in
+new) drawing --new-window ;;
+screenshot)
+    scrot - | xclip -selection clipboard
+    drawing --edit-clipboard
+    ;;
+*) echo wrong arguments ;;
+esac

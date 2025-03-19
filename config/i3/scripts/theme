@@ -1,0 +1,21 @@
+#!/bin/sh
+
+empty() {
+    if [[ -z $1 ]] then
+        exit
+    fi
+
+}
+
+base=~/wallpapers
+theme=$(ls $base | dmenu)
+empty $theme
+
+img=$(ls $base/$theme | dmenu)
+empty $img
+
+wallust theme $theme 
+feh --bg-fill $base/$theme/$img
+
+xrdb ~/.Xresources
+i3-msg reload

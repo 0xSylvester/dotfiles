@@ -1,7 +1,7 @@
 ~/.fehbg &
-compton &
+picom -b --config ~/.config/picom/picom.conf &
 
-#redshift -O 2500 
+redshift -O 2500 
 
 if [ -e $HOME/scripts/keyboard ];then
    $HOME/scripts/keyboard & 
