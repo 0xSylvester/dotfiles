@@ -14,8 +14,12 @@ empty $theme
 img=$(ls $base/$theme | wofi --dmenu)
 empty $img
 
-wallust run $base/$theme/$img
-swww img $base/$theme/$img
+wallpaper=$base/$theme/$img
 
-pkill waybar 
-hyprctl dispatch exec "waybar -c ~/.config/waybar/hyprland/config -s ~/.config/waybar/hyprland/style.css"
+wallust theme $theme 
+swww img -t wipe $wallpaper
+
+sed -i "s|\(\$wallpaper = \).*|\1${wallpaper}|" ~/.config/hypr/theme.conf
+
+killall waybar
+waybar -c ~/.config/waybar/hyprland/config -s ~/.config/waybar/hyprland/style.css

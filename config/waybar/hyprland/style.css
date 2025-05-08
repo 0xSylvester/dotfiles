@@ -8,22 +8,22 @@
 }
 
 window#waybar {
-	background:rgba(0,0,0,0.5);
-	color:@foreground;
+	background:rgba(0,0,0,0);
+	color:@text;
 }
 
 
 #workspaces button {
-	background: @color2;
-	color: @foreground;
+	background: @color7;
+	color: @text;
 	padding: 0 10px;
 	margin: 0 2px;
 	border-radius: 20%;
 }
 
 #workspaces button.active {
-	background: @color4;
-	color: @foreground;
+	background: @color3;
+	color: @text;
 }
 
 #workspaces button.urgent {
@@ -31,24 +31,24 @@ window#waybar {
 }
 
 #group-power {
-	background: @color4;
-	color: @foreground;
+	background: @color3;
+	color: @text;
 	padding: 0 4px;
 	margin: 0 2px;
 }
 
 #tray {
-	background: @color1;
+	background: @color3;
 	padding:0 10px;
 }
 
 #tray menu {
-	background: @color4;
-	color: @foreground;
+	background: @color7;
+	color: @text;
 }
 
 #network, #pulseaudio{
-	background: @color4;
+	background: @color3;
 	padding: 0 5px;
 	margin: 0 1px;
 	border-top-right-radius:0px;
@@ -56,7 +56,7 @@ window#waybar {
 }
 
 #battery, #backlight{
-	background: @color4;
+	background: @color3;
 	padding: 0 5px;
 	margin: 0 1px;
 	border-top-left-radius:0px;
@@ -64,24 +64,24 @@ window#waybar {
 }
 
 #clock {
-	background: @color0;
+	background: @color3;
 	margin: 0 2px;
 	padding: 0 5px;
 }
 
 #network.disconnected {
-	background:@color11;
+	background:@color1;
 }
 
 #battery.charging {
-	background:#000000;
+	background:@color7;
 }
 
 #battery.discharging {
-	background:#ff0000;
+	background:@color1;
 }
 
 #pulseaudio.muted {
-	background: @color11;
+	background: @color1;
 }
 
