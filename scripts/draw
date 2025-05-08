@@ -2,6 +2,7 @@
 
 mode=$1
 case "$mode" in
+
 new) drawing --new-window ;;
 screenshot)
     grim - | wl-copy
