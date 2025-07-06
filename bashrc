@@ -1,5 +1,6 @@
 [ -z "$PS1" ] && return
 [ -f "$HOME/.cache/wallust/sequences" ] && cat $HOME/.cache/wallust/sequences 
+eval "$(starship init bash)"
 #==========VARIABLEs==========
 #
 #set default apps
@@ -20,7 +21,7 @@ export dotfiles="$repos/dotfiles"
 #prompt settings
 # 0 - 15 for colors, and 16 for reset.
 Co=( '\033[3'{0..7}m '\033[1;3'{0..7}m '\033[0m' )
-PROMPT_COMMAND="_ps1"
+#PROMPT_COMMAND="_ps1"
 
 export GRIM_DEFAULT_DIR="$HOME/Pictures/screen"
 #==========BASH-OPTIONS==========
