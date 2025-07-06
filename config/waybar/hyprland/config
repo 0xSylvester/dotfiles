@@ -55,7 +55,7 @@
 		},
 
 		"network":{
-			"interface": "wlan0",
+			"interface": "wlo1",
 			"format":"{essid} ",
 			"format-disconnected":"󱚵",
 			"tooltip-format":"{ipaddr}",
