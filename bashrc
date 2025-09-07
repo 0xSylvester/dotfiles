@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 [ -z "$PS1" ] && return
 [ -f "$HOME/.cache/wallust/sequences" ] && cat $HOME/.cache/wallust/sequences 
 eval "$(starship init bash)"
@@ -60,6 +62,9 @@ alias grep='grep --color=auto'
 alias startx='startx 2> /dev/null' #move all output to null partition 
 alias mpv='mpv >/dev/null' 
 alias neomutt='TERM=screen-256color neomutt'
+
+#sudoedit 
+alias svi='sudoedit'
 #==========FUNCTIONS==========
 _check_branch(){
         git branch --show-current 2>/dev/null
