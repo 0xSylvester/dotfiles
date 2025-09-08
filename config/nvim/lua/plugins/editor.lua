@@ -52,6 +52,16 @@ return {
 					c = { "clang-format" },
 					cpp = { "clang-format" },
 					json = { "cfn-lint" },
+					rs = { "cargo-fmt" },
+					html = { "prettier" },
+					css = { "prettier" },
+					md = { "prettier" },
+				},
+				formatters = {
+					prettier = {
+						command = "prettier",
+						args = { "--tab-width", "4" },
+					},
 				},
 			})
 			vim.api.nvim_create_autocmd({ "BufWritePre", "BufRead" }, {
@@ -61,5 +71,11 @@ return {
 				end,
 			})
 		end,
+	},
+	{
+		"numToStr/Comment.nvim",
+		opts = {
+			-- add any options here
+		},
 	},
 }
