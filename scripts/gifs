@@ -1,0 +1,8 @@
+#!/bin/bash
+
+base="$HOME/Videos/gifs"
+selected=$(ls $base | cut -d'.' -f1 | wofi -d -p "gif:")
+
+path="file://$base/$selected.mp4"
+
+echo "$path" | wl-copy -t text/uri-list
