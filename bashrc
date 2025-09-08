@@ -39,7 +39,6 @@ alias wiki='wiki-search-html'
 #cd 
 alias i3c='cd $i3c'
 alias ..='cd ../'
-alias dot='cd $dotfiles'
 alias dl='cd $HOME/Downloads/'
 alias repos='cd $repos'
 #cp,rm,du free stuff

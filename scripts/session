@@ -15,7 +15,6 @@ go() {
         \; rename-window -t $name:0 vi \
         \; new-window -n run \
         \; new-window -n doc \
-        \; new-window -n AI "tgpt -i --provider $ai_provider" \
         \; new-window -n browser \
         \; next-window -t $name:0
 }
@@ -29,7 +28,6 @@ main() {
         tmux new -s $name -c $base \
             \; rename-window -t $name:0 vi \
             \; new-window -n man \
-            \; new-window -n AI "tgpt -i --provider $ai_provider" \
             \; new-window -n browser \
             \; new-window -n yt \
             \; next-window -t $name:0
@@ -46,7 +44,6 @@ cpp() {
             \; rename-window -t $name:0 vi \
             \; new-window -n run \
             \; new-window -n man \
-            \; new-window -n AI "tgpt -i --provider $ai_provider" \
             \; next-window -t $name:0
     fi
 }
@@ -61,7 +58,6 @@ c() {
             \; rename-window -t $name:0 vi \
             \; new-window -n run \
             \; new-window -n man \
-            \; new-window -n AI "tgpt -i --provider $ai_provider" \
             \; next-window -t $name:0
     fi
 }
@@ -73,25 +69,11 @@ web() {
         tmux a -t $name
     else
         tmux new -s $name -c $base \
-            \; rename-window -t $name:0 vi \
-            \; new-window -n run \
+            \; rename-window -t $name:0 vi-front \
+            \; new-window -n vi-back \
             \; new-window -n man \
-            \; new-window -n AI "tgpt -i --provider $ai_provider" \
-            \; next-window -t $name:0
-    fi
-}
-
-java() {
-    name="java"
-    base=$HOME/repos/lab/java
-    if command tmux has-session -t $name 2>/dev/null; then
-        tmux a -t $name
-    else
-        tmux new -s $name -c $base \
-            \; rename-window -t $name:0 vi \
-            \; new-window -n run \
-            \; new-window -n man \
-            \; new-window -n AI "tgpt -i --provider $ai_provider" \
+            \; new-window -n frontend \
+            \; new-window -n backend \
             \; next-window -t $name:0
     fi
 }
@@ -106,7 +88,6 @@ rust() {
             \; rename-window -t $name:0 vi \
             \; new-window -n run \
             \; new-window -n man \
-            \; new-window -n AI "tgpt -i --provider $ai_provider" \
             \; next-window -t $name:0
     fi
 }
