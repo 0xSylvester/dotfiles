@@ -272,4 +272,35 @@ return {
 			},
 		},
 	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+		opts = {},
+		config = function()
+			require("render-markdown").setup({})
+		end,
+	},
+	{
+		"stevearc/oil.nvim",
+		lazy = false,
+		config = function()
+			require("oil").setup({})
+		end,
+	},
+	{
+		"alex-popov-tech/store.nvim",
+		dependencies = {
+			"OXY2DEV/markview.nvim", -- optional, for pretty readme preview / help window
+			"nvim-lua/plenary.nvim",
+		},
+		cmd = "Store",
+		keys = {
+			{ "<leader>p", "<cmd>Store<cr>", desc = "Open Plugin Store" },
+		},
+		opts = {
+			-- optional configuration here
+		},
+	},
 }
