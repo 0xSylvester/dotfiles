@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name:vue-base
+# key:vb
+# --
+
+<script setup></script>
+<template></template>
+<style lang="scss" scoped></style>
