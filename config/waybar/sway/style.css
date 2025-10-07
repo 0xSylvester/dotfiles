@@ -3,19 +3,19 @@
 * {
 	border: none;
 	border-radius: 4px;
-	font-family: "Inconsolata Semi Expanded Bold" ;
+	font-family: "Inconsolata Nerd Font Propo";
+	font-weight: bold;
 	font-size: 16px;
 }
 
 #tooltip {
-    color: #fff;
+	color: #fff;
 }
 
 window#waybar {
 	background: none;
-	color:@text;
+	color: @text;
 }
-
 
 #workspaces button {
 	background: @color7;
@@ -25,15 +25,14 @@ window#waybar {
 	border-radius: 20%;
 }
 
-#workspaces button.focused{
+#workspaces button.focused {
 	background: @color3;
 	color: @text;
 }
 
 #workspaces button.urgent {
-	background:@color11;
+	background: @color11;
 }
-
 
 #group-power {
 	background: @color3;
@@ -44,12 +43,12 @@ window#waybar {
 
 #tray {
 	background: @color3;
-	padding:0 10px;
+	padding: 0 10px;
 }
 
 #mode {
-    background: @color2;
-	padding:0 5px;
+	background: @color2;
+	padding: 0 5px;
 }
 
 #tray menu {
@@ -57,20 +56,22 @@ window#waybar {
 	color: @text;
 }
 
-#network, #pulseaudio{
+#network,
+#pulseaudio {
 	background: @color3;
 	padding: 0 5px;
 	margin: 0 1px;
-	border-top-right-radius:0px;
-	border-bottom-right-radius:0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
 }
 
-#battery, #backlight{
+#battery,
+#backlight {
 	background: @color3;
 	padding: 0 5px;
 	margin: 0 1px;
-	border-top-left-radius:0px;
-	border-bottom-left-radius:0px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
 }
 
 #clock {
@@ -80,18 +81,17 @@ window#waybar {
 }
 
 #network.disconnected {
-	background:@color1;
+	background: @color1;
 }
 
 #battery.charging {
-	background:@color7;
+	background: @color7;
 }
 
 #battery.discharging {
-	background:@color1;
+	background: @color1;
 }
 
 #pulseaudio.muted {
 	background: @color1;
 }
-
