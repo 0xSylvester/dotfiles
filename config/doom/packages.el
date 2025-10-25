@@ -3,6 +3,7 @@
 (package! org-modern)
 (package! org-auto-tangle)
 (package! org-super-agenda)
+(package! org-present)
 (package! consult-org-roam)
 (package! svg-tag-mode)
 
@@ -19,6 +20,9 @@
 (package! imenu-list)
 (package! focus)
 
+;; Utilities
+(package! openwith)
+
 ;; light theme
 (package! south-theme
   :recipe (:host github
@@ -33,8 +37,9 @@
 (package! typst-ts-mode
   :recipe (:host nil
            :repo "https://git.sr.ht/~meow_king/typst-ts-mode"))
+(package! ox-typst)
+
 
 (package! gt)
 (package! ssh-agency)
 (package! bluetooth)
-(package! openwith)
