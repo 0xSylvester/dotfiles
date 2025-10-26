@@ -10,6 +10,7 @@
   - [[#org][Org]]
   - [[#org-agenda][Org Agenda]]
   - [[#org-roam][Org Roam]]
+  - [[#org-presentation][Org presentation]]
   - [[#git][Git]]
   - [[#dired][Dired]]
   - [[#complition][Complition]]
@@ -358,12 +359,35 @@ its package to make org mode look pretty
    ("C-c n r" . consult-org-roam-search))
 #+end_src
 
+** Org presentation
+This configuration for setup org mode to use it as presentation tool
+
+#+begin_src emacs-lisp :tangle config.el
+
+(defun config/presentation-start ()
+  (setq text-scale-mode-amount 3)
+  (setq olivetti-body-width 60)
+  (text-scale-mode 1))
+
+
+(defun config/presentation-end ()
+  (setq olivetti-body-width 120)
+  (setq header-line-format nil)
+  (text-scale-mode 0))
+
+(use-package! org-tree-slide
+  :hook ((org-tree-slide-play . config/presentation-start)
+         (org-tree-slide-stop . config/presentation-end))
+  :custom
+  (org-image-actual-width nil))
+#+end_src
+
 ** Git
 *** Magit
 #+begin_src emacs-lisp :tangle config.el
 #+end_src
 *** Git Timemachine
-#+begin_src emacs-lisp :tangle configl.el
+#+begin_src emacs-lisp :tangle config.el
 #+end_src
 
 ** Dired
@@ -494,7 +518,7 @@ Emacs MultiMedia System
          
          (list (openwith-make-extension-regexp
                 '("png" "jpeg" "jpg" "gif"))
-               "sxiv"
+               "firefox"
                '(file))
          
          (list (openwith-make-extension-regexp
@@ -520,9 +544,9 @@ For more info for packaging in doom read =Package management= in doom doc
 ;; Org
 (package! org-pomodoro)
 (package! org-modern)
+(package! org-tree-slide)
 (package! org-auto-tangle)
 (package! org-super-agenda)
-(package! org-present)
 (package! consult-org-roam)
 (package! svg-tag-mode)
 

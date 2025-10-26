@@ -252,6 +252,25 @@
    ("C-c n l" . consult-org-roam-forward-links)
    ("C-c n r" . consult-org-roam-search))
 
+(defun config/presentation-start ()
+  (setq text-scale-mode-amount 3)
+  (setq olivetti-body-width 60)
+  (text-scale-mode 1))
+
+
+(defun config/presentation-end ()
+  (setq olivetti-body-width 120)
+  (setq header-line-format nil)
+  (text-scale-mode 0))
+
+(use-package! org-tree-slide
+  :hook ((org-tree-slide-play . config/presentation-start)
+         (org-tree-slide-stop . config/presentation-end))
+  :custom
+  (org-image-actual-width nil))
+
+
+
 
 
 (use-package! nerd-icons-dired
@@ -343,7 +362,7 @@
          
          (list (openwith-make-extension-regexp
                 '("png" "jpeg" "jpg" "gif"))
-               "sxiv"
+               "firefox"
                '(file))
          
          (list (openwith-make-extension-regexp
