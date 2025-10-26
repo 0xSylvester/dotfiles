@@ -1,0 +1,90 @@
+@import "theme.css";
+
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-size: 12px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+tooltip {
+    background-color: rgba(41, 42, 52, 0.8);
+    border: 2px solid rgb(69, 71, 87);
+}
+
+tooltip label {
+    color: white;
+}
+
+#hardware,
+#workspaces,
+#clock,
+#backlight,
+#wireplumber,
+#pulseaudio,
+#network,
+#battery,
+#session,
+#tray {
+    margin-top: 6px;
+    margin-left: 8px;
+    margin-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    background-color: rgba(41, 42, 52, 0.8);
+    border: 2px solid @color3;
+    border-radius: 12px;
+
+    color: white;
+}
+
+#workspaces button {
+    color: rgb(69, 71, 87);
+}
+
+#workspaces button:hover {
+    background: transparent;
+    box-shadow: inherit;
+    border-top: none;
+    color: white;
+}
+
+#workspaces button.active {
+    color: @color3;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#workspaces button.active:hover {
+    color: white;
+}
+
+#cpu,
+#memory,
+#disk,
+#temperature {
+    margin-left: 8px;
+    margin-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: white;
+    background-color: rgba(47, 113, 62, 0.8);
+    border: 2px solid rgb(55, 76, 50);
+    border-radius: 10px;
+}
+
+#pulseaudio.muted {
+    background: @color1;
+}
+#window {
+    color: @color10;
+}

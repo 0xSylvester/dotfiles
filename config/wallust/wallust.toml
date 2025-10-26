@@ -13,6 +13,9 @@ waybar-sway.target = '~/.config/waybar/sway/theme.css'
 waybar-hypr.template = 'waybar-hypr'
 waybar-hypr.target = '~/.config/waybar/hyprland/theme.css'
 
+waybar-niri.template = 'waybar-niri'
+waybar-niri.target = '~/.config/waybar/niri/theme.css'
+
 wofi.template = 'wofi'
 wofi.target = '~/.config/wofi/theme.css'
 

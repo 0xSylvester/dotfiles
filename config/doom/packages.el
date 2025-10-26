@@ -1,9 +1,9 @@
 ;; Org
 (package! org-pomodoro)
 (package! org-modern)
+(package! org-tree-slide)
 (package! org-auto-tangle)
 (package! org-super-agenda)
-(package! org-present)
 (package! consult-org-roam)
 (package! svg-tag-mode)
 

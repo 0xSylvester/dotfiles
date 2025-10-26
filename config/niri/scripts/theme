@@ -1,0 +1,25 @@
+#!/bin/sh
+
+empty() {
+    if [[ -z $1 ]] then
+        exit
+    fi
+
+}
+
+base=~/wallpapers
+theme=$(ls $base | wofi --dmenu)
+empty $theme
+
+img=$(ls $base/$theme | wofi --dmenu)
+empty $img
+
+wallpaper=$base/$theme/$img
+
+wallust theme $theme 
+swww img -t wipe $wallpaper
+
+sed -i "s|\(\$wallpaper = \).*|\1${wallpaper}|" ~/.config/hypr/theme.conf
+
+killall waybar
+waybar -c ~/.config/waybar/niri/config -s ~/.config/waybar/niri/style.css
