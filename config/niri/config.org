@@ -25,6 +25,7 @@ This my niri configuration
  - Bar: waybar
  - Launcher: anyrun 
  - Editor: doom-emacs
+ - Image viewer
  - Idle: hypridle
  - lockscreen: hyprlock
  - Notification:mako
@@ -356,6 +357,7 @@ window-rule {
 window-rule {
     match app-id="org.pwmt.zathura"
     match app-id="mpv"
+    match app-id="imv"
     open-fullscreen true
     open-on-workspace "media"
 }

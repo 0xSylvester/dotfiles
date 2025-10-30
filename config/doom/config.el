@@ -362,7 +362,7 @@
          
          (list (openwith-make-extension-regexp
                 '("png" "jpeg" "jpg" "gif"))
-               "firefox"
+               "imv"
                '(file))
          
          (list (openwith-make-extension-regexp
