@@ -501,11 +501,26 @@ Emacs MultiMedia System
   (typst-ts-mode-grammar-location (expand-file-name "tree-sitter/libtree-sitter-typst.so" user-emacs-directory))
   (typst-ts-mode-enable-raw-blocks-highlight t)
   :config
-  (keymap-set typst-ts-mode-map "C-c C-c" #'typst-ts-tmenu))
+  (keymap-set typst-ts-mode-map "C-c C-c" #'typst-ts-tmenu)
+  (add-to-list 'auto-mode-alist '("\.typ\'" . typst-ts-mode)))
+
 
 (use-package! ox-typst
   :after org)
 
+(use-package! lsp-mode  
+  :config  
+  ;; Register the language ID for your major mode  
+  (add-to-list 'lsp-language-id-configuration '(typst-ts-mode . "tinymist"))  
+    
+  ;; Register the tinymist client  
+  (lsp-register-client  
+   (make-lsp-client  
+    :new-connection (lsp-stdio-connection "tinymist")  
+    :activation-fn (lsp-activate-on "tinymist")  
+    :server-id 'tinymist)))
+
+(add-hook! 'typst-ts-mode-hook #'lsp!)
 #+end_src
 
 ** OpenWith
@@ -559,6 +574,7 @@ For more info for packaging in doom read =Package management= in doom doc
 (package! org-super-agenda)
 (package! consult-org-roam)
 (package! svg-tag-mode)
+(package! ox-typst)
 
 ;; Icons
 (package! nerd-icons)

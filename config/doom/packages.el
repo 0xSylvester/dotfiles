@@ -6,6 +6,7 @@
 (package! org-super-agenda)
 (package! consult-org-roam)
 (package! svg-tag-mode)
+(package! ox-typst)
 
 ;; Icons
 (package! nerd-icons)
