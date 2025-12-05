@@ -22,6 +22,9 @@ wofi.target = '~/.config/wofi/theme.css'
 sway.template = 'sway'
 sway.target = '~/.config/sway/theme'
 
+niri.template = 'niri'
+niri.target = '~/.config/niri/theme.kdl'
+
 swaylock.template = 'swaylock'
 swaylock.target = '~/.config/swaylock/config'
 

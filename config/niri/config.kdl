@@ -93,6 +93,8 @@ layout {
     }
 }
 
+include "theme.kdl"
+
 overview {
     zoom 0.5
 }
