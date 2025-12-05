@@ -1,0 +1,10 @@
+layout {
+
+       border {
+              width 2
+
+              active-color "{{color3}}"
+              inactive-color "{{color7}}"
+              urgent-color "#9b0000"
+        }
+}  

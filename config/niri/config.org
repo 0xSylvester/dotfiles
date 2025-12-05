@@ -136,6 +136,7 @@ layout {
     }
 }
 
+include "theme.kdl"
 #+end_src
 
 * Overview
@@ -152,7 +153,7 @@ spawn-at-startup "~/.config/niri/scripts/waybar"
 spawn-at-startup "swww-daemon"
 spawn-sh-at-startup "niri-screen-time -daemon"
 spawn-at-startup "wlsunset -l 32.377533 -L 15.092017"
-spawn-at-startup "stasis"
+spawn-at-startup "hypridle"
 spawn-sh-at-startup "emacs --daemon"
 spawn-at-startup "Telegram"
 
@@ -172,7 +173,7 @@ screenshot-path "~/Pictures/screen/%Y-%m-%d %H-%M-%S.png"
 #+end_src
 
 * Animation
-#+begin_src kdl :tangle config.kel
+#+begin_src kdl :tangle config.kdl
 animations {}
 #+end_src
 
@@ -182,8 +183,10 @@ animations {}
 binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: Foot" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Run an Application: wofi" { spawn "wofi"; }
+    Mod+Shift+D hotkey-overlay-title="Run an Application: wofi" { spawn-sh "wofi --show drun";}
     Super+X hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "hyprlock"; }
     Mod+T hotkey-overlay-title="Wallpaper Picker" {spawn-sh "~/.config/niri/scripts/theme";}
+    Mod+S hotkey-overlay-title="Window details" {spawn-sh "~/.config/niri/scripts/window";}
 
 #+end_src
 
@@ -373,6 +376,7 @@ window-rule {
 window-rule {
     match app-id="com.obsproject.Studio"
     match app-id="Gimp-2.10"
+    match app-id="org.kde.kdenlive"
     open-maximized true
     open-on-workspace "OBS"
 }
