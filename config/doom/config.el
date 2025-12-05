@@ -172,6 +172,7 @@
       '((:name "Overdue "
          :order 1
          :scheduled past
+         :deadline past
          :face 'error)
         
         (:name " DeadLine "
@@ -255,12 +256,16 @@
 (defun config/presentation-start ()
   (setq text-scale-mode-amount 3)
   (setq olivetti-body-width 60)
+  (read-only-mode)
+  (openwith-mode 0 )
   (text-scale-mode 1))
 
 
 (defun config/presentation-end ()
   (setq olivetti-body-width 120)
   (setq header-line-format nil)
+  (read-only-mode)
+  (openwith-mode 1 )
   (text-scale-mode 0))
 
 (use-package! org-tree-slide
@@ -369,5 +374,10 @@
                 '("pdf"))
                "zathura"
                '(file))
+         (list (openwith-make-extension-regexp
+                '("pptx"))
+               "firefox"
+               '(file))
+
          ))
   (openwith-mode t))
