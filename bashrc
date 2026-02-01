@@ -91,3 +91,10 @@ _ps1() {
                PS1="${_p[lb]}${_p[t]}${_p[rb]}${_p[ar]} ${_p[w]} ${_p[d]} "
         fi
 }
+
+# pnpm
+export PNPM_HOME="/home/sylvester/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
