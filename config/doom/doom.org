@@ -20,6 +20,8 @@
   - [[#emms][Emms]]
   - [[#typst][Typst]]
   - [[#openwith][OpenWith]]
+  - [[#lsp][LSP]]
+  - [[#ox-reveal][Ox-reveal]]
 - [[#my-packageel][My package.el]]
 - [[#my-initel][My init.el]]
 #+END_QUOTE
@@ -402,6 +404,10 @@ This configuration for setup org mode to use it as presentation tool
   :hook
   (dired-mode . nerd-icons-dired-mode))
 
+(require 'dired-x)
+(setq dired-omit-files 
+        (concat dired-omit-files "\\|^\\..*"))
+
 #+end_src
 
 ** Complition
@@ -551,8 +557,19 @@ Emacs MultiMedia System
                '(file))
 
          ))
-  (openwith-mode t))
+  (openwith-mode nil))
 
+#+end_src
+
+** LSP
+#+begin_src emacs-lisp :tangle config.el
+(setq lsp-rust-analyzer-linked-projects ["Cargo.toml"])
+#+end_src
+
+** Ox-reveal
+#+begin_src emacs-lisp :tangle config.el
+(use-package! ox-reveal)
+(setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
 #+end_src
 
 * My package.el
@@ -608,6 +625,8 @@ For more info for packaging in doom read =Package management= in doom doc
            :repo "https://git.sr.ht/~meow_king/typst-ts-mode"))
 (package! ox-typst)
 
+(package! ox-reveal)
+(package! tmr)
 
 (package! gt)
 (package! ssh-agency)

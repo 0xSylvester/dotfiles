@@ -40,6 +40,8 @@
            :repo "https://git.sr.ht/~meow_king/typst-ts-mode"))
 (package! ox-typst)
 
+(package! ox-reveal)
+(package! tmr)
 
 (package! gt)
 (package! ssh-agency)

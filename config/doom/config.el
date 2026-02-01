@@ -282,6 +282,10 @@
   :hook
   (dired-mode . nerd-icons-dired-mode))
 
+(require 'dired-x)
+(setq dired-omit-files 
+        (concat dired-omit-files "\\|^\\..*"))
+
 (use-package nerd-icons-completion
   :after marginalia
   :config
@@ -396,4 +400,9 @@
                '(file))
 
          ))
-  (openwith-mode t))
+  (openwith-mode nil))
+
+(setq lsp-rust-analyzer-linked-projects ["Cargo.toml"])
+
+(use-package! ox-reveal)
+(setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
