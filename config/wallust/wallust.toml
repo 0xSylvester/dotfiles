@@ -31,4 +31,6 @@ swaylock.target = '~/.config/swaylock/config'
 Xresource.template = 'Xresources'
 Xresource.target = '~/.Xresources'
 
+mako.template = 'mako'
+mako.target = '~/.config/mako/theme'
 

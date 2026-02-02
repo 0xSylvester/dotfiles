@@ -1,12 +1,10 @@
-default-timeout=6000
-border-size=1
-
 #colors
+include=~/.config/mako/theme
 
-background-color=#1e1e2e
-text-color=#cdd6f4
-border-color=#b4befe
-progress-color=over #313244
+default-timeout=5000
+border-size=2
+border-radius=10
+
 
 
 [urgency=high]

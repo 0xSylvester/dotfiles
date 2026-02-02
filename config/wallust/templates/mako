@@ -1,0 +1,5 @@
+background-color={{ background}}
+text-color={{ foreground}}
+border-color={{ color3 }}
+progress-color=over #313244
+
